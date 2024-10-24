@@ -6,12 +6,12 @@ from time import sleep
 from telethon.tl import types
 from telethon.errors import FloodWaitError, ChatAdminRequiredError
 
-api_id = '20433229'  
-api_hash = 'd731841aceecc88e5da49fda61b18c6d'  
+api_id = '20800266'  
+api_hash = '5545e6a502032b0b6b3b0f8cfc17bf26'  
 
-grupo_origen_id = -4190383091 #<----AQUI EL GRUPO  DE ORIGEN 
+grupo_origen_id = -4581171885 #<----AQUI EL GRUPO  DE ORIGEN 
 
-tu_numero_telefono = '+51904130680' 
+tu_numero_telefono = '+51928629578' 
 
 def iniciar_sesion():
     client = TelegramClient('session_name', api_id, api_hash)
@@ -27,7 +27,7 @@ def iniciar_sesion():
 def enviar_mensaje(client):
     try:
         print("\033[92m\u0062\u0079 \u0040\u0066\u0061\u006e\u0074\u0061\u0073\u006d\u0069\u006e\u0078\u0078\033[0m")
-        sleep(3)  # Esperar 5 segundos
+        sleep(5)  # Esperar 5 segundos
         print("\033[A                             \033[A")  
     except Exception as ex:
         print(f"ERROR AL REENVIAR EL MENSAJE {ex}")
@@ -53,7 +53,7 @@ def reenviar_mensajes(client):
                         if error_str not in errores_impresos:
                             print(f"Error al reenviar mensaje al grupo {chat.title}: {error_str}")
                             errores_impresos.add(error_str)
-            sleep(1)  # Esperar 1 segundo después de enviar cada mensaje
+            sleep(10)  # Esperar 10 segundo después de enviar cada mensaje
 
     except Exception as ex:
         print(f"Error general: {ex}")
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     while True:
         try:
             reenviar_mensajes(client)
-            print("Esperar 10 minutos para reenviar mensajes nuevamente.")
-            sleep(600)  # Esperar 15 minutos (900 segundos) antes de volver a reenviar mensajes
+            print("Esperar 15 minutos para reenviar mensajes nuevamente.")
+            sleep(900)  # Esperar 15 minutos (900 segundos) antes de volver a reenviar mensajes
         except Exception as ex:
             print(f"Error general: {ex}")
