@@ -27,7 +27,7 @@ def iniciar_sesion():
 def enviar_mensaje(client):
     try:
         print("\033[92m\u0062\u0079 \u0040\u0066\u0061\u006e\u0074\u0061\u0073\u006d\u0069\u006e\u0078\u0078\033[0m")
-        sleep(5)  # Esperar 5 segundos
+        sleep(10)  # Esperar 10 segundos
         print("\033[A                             \033[A")  
     except Exception as ex:
         print(f"ERROR AL REENVIAR EL MENSAJE {ex}")
